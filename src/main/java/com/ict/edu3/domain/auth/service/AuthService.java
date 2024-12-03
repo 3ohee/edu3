@@ -13,8 +13,6 @@ import com.ict.edu3.domain.auth.vo.UserVO;
 
 @Service
 public class AuthService {
-    @Autowired
-    private AuthenticationManager authenticationManager;
 
     @Autowired
     private MyUserDetailService myUserDetailService;
