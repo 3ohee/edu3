@@ -12,6 +12,7 @@ import com.ict.edu3.domain.guestbook.vo.GuestBookVO;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
@@ -38,5 +39,25 @@ public class GuestBookController {
         
         return dataVO;
     }
+
+    @GetMapping("/detail/{gb_idx}")
+    public DataVO getGuestBookDetail(@PathVariable String gb_idx) {
+        DataVO dataVO = new DataVO();
+        try {
+            // log.info("gb_idx : " + gb_idx);
+            GuestBookVO gvo = guestBookService.getGuestBookById(gb_idx);
+
+            dataVO.setSuccess(true);
+            dataVO.setMessage("게스트북 상세보기 성공");
+            dataVO.setData(gvo);
+
+        } catch (Exception e) {
+            dataVO.setSuccess(false);
+            dataVO.setMessage("게스트북 상세보기 실패");
+        }
+        
+        return dataVO;
+    }
+    
     
 }
