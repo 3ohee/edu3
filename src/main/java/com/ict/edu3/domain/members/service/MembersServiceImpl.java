@@ -8,7 +8,6 @@ import com.ict.edu3.domain.members.mapper.MembersMapper;
 
 @Service
 public class MembersServiceImpl implements MembersService {
-
     @Autowired
     private MembersMapper membersMapper;
 
@@ -19,9 +18,7 @@ public class MembersServiceImpl implements MembersService {
 
     @Override
     public MembersVO getMembersById(String m_id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getMembersById'");
+        return membersMapper.getMembersById(m_id);
     }
 
-  
 }
