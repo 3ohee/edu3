@@ -16,7 +16,7 @@ import com.ict.edu3.domain.auth.vo.UserVO;
 import com.ict.edu3.domain.members.mapper.MembersMapper;
 
 @Service
-public class MyUserDetailService implements UserDetailsService {
+public class MyUserDetailService implements UserDetailsService { 
     @Autowired
     private AuthMapper authMapper;
     @Autowired
